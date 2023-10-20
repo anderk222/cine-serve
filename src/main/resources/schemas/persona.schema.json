@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.com/rolOpcion.schema.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "nombres",
+        "apellidos",
+        "identificacion",
+        "date"
+    ],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "default": 0,
+            "title": "The id Schema",
+            "examples": [
+                0
+            ]
+        },
+        "nombres": {
+            "type": "string",
+            "default": "",
+            "title": "The nombres Schema",
+            "examples": [
+                "Anderson Jhoan"
+            ]
+        },
+        "apellidos": {
+            "type": "string",
+            "default": "",
+            "title": "The apellidos Schema",
+            "examples": [
+                "Macias Ordonez"
+            ]
+        },
+        "identificacion": {
+            "type": "string",
+            "default": "",
+            "title": "The identificacion Schema",
+            "minLength" : 10,
+            "maxLength" : 10,
+            "pattern": "^(?!.*(\\d)\\1{3})",
+            "message" : {
+                "pattern" : "identificacion no debe tener mas de tres numeros repetidos consecutivamente"
+            },
+            "examples": [
+                "1234567890"
+            ]
+        },
+        "date": {
+            "type": "string",
+            "default": "",
+            "title": "The date Schema",
+            "examples": [
+                "2002-12-29"
+            ]
+        }
+    },
+    "examples": [{
+        "id": 0,
+        "nombres": "Anderson Jhoan",
+        "apellidos": "Macias Ordonez",
+        "identificacion": "1234567890",
+        "date": "2002-12-29"
+    }]
+}
